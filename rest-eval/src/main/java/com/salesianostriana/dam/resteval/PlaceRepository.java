@@ -3,6 +3,7 @@ package com.salesianostriana.dam.resteval;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Repository;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
@@ -16,7 +17,28 @@ public class PlaceRepository {
 
     @PostConstruct
     public void init() {
-        // Añadir aquí datos de ejemplo
+
+        //Place 1: Bar Los Meri.
+        Place p1 = new Place(
+                1L,
+                "Bar Los Meri",
+                "Calle López de Legazpi",
+                "1N 2S",
+                "Tus tapas favoritas están aquí.",
+                Arrays.asList("Bueno", "Bonito", "Barato"),
+                "HE AQUÍ LA IMAGEN."
+        );
+
+        //Place 2: Bar Los Meri.
+        Place p2 = new Place(
+                2L,
+                "Restaurante Arousa",
+                "Calle Galicia",
+                "3N 4S",
+                "Galleguinho.",
+                Arrays.asList("Limpio", "Amplio"),
+                "HE AQUÍ LA IMAGEN."
+        );
     }
 
     public Place add(Place place) {
@@ -48,6 +70,5 @@ public class PlaceRepository {
     public void delete(Long id) {
         places.remove(id);
     }
-
 
 }

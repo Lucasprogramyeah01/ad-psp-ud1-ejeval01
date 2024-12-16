@@ -22,20 +22,15 @@ public class Place {
     private List<String> tags = new ArrayList<>();
     private String image;
 
+    //MÉTODOS HELPER (AÑADIR TAG Y BORRAR TAG)
 
     public void addTag(String tag) {
-
         if (tags.stream().noneMatch(t -> t.equalsIgnoreCase(tag)))
             tags.add(tag);
-
     }
 
     public void removeTag(String tag) {
         tags.removeIf(t -> t.equalsIgnoreCase(tag));
     }
-
-
-
-
 
 }
